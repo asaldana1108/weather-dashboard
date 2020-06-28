@@ -72,7 +72,26 @@ var displayWeather = function(data) {
     var cityLon = data.coord.lon;
     var cityLat = data.coord.lat; 
 
-    // var uvIndexURL = "http://api.openweathermap.org/data/2.5/uvi/forecast?" + city + "&units=imperial&appid=628c529cd5b47376e9d91b17583d2db0";
+    var uvIndexURL = "http://api.openweathermap.org/data/2.5/uvi?appid=628c529cd5b47376e9d91b17583d2db0&lat=" + cityLat +"&lon=" + cityLon;
+    fetch(uvIndexURL)
+        .then((response) => {
+        return response.json();
+        })
+        .then((uvData) => {
+            console.log(uvData);
+            var uvIndexValue = uvData.value;
+            console.log(uvIndexValue);
+            uvIndexEl.textContent = uvIndexValue;
+            if(uvIndexValue > 8) {
+                uvIndexEl.className = "bg-danger text-white";
+            }
+            if(uvIndexValue < 7) {
+                uvIndexEl.className = "bg-warning text-white";
+            }
+            if(uvIndexValue < 3) {
+                uvIndexEl.className = "bg-success text-white";
+            }
+        });
 
 };
 
