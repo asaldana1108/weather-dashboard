@@ -4,9 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather Dashboard</title>
-    
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css" />
+    <link rel="stylesheet" href="./assets/css/style.css"/>
+
 </head>
 <body>
+    <header>
+        <nav class="navbar navbar-dark bg-dark justify-content-center">
+            <h1 class="navbar-brand h1">Weather Dashboard</h1> 
+        </nav>
+    </header>
+
+    <main>
+        <div class="row">
+            <div class="col-4 border bg-light">
+                <h2>Search for a City:</h2>
+                <form class="form-inline">
+                    <input class="form-control mr-sm2" id="city-name" placeholder="Enter a City">
+                    <button class="btn btn-primary" type="submit"><span class="oi oi-magnifying-glass"></span></button>
+                </form>
+            </div> <!--City Search-->
+        
+            <div class="col-8"> <!--City Weather Container-->
+                <div class="col-12"> <!--City info container-->
+
+                </div> <!--City info container-->
+                <div class="col-12"> <!-- 5 day forecast container-->
+
+                </div> <!--5 day forecast container-->
+            </div> <!-- City Weather Container-->
+
+        </div> <!-- main div with class row-->
+    </main>
     
+    <script src="./assets/js/script.js"></script>
 </body>
 </html>
