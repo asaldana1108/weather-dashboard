@@ -19,26 +19,34 @@
 
     <main>
         <div class="row">
-            <div class="col-4 border bg-light">
+            <div class="col-4 border bg-light" id="citybutton">
                 <h2>Search for a City:</h2>
-                <form class="form-inline">
-                    <input class="form-control mr-sm2" id="city-name" placeholder="Enter a City">
+                <form class="form-inline" id="city-form">
+                    <input class="form-control mr-sm2" id="city-name" type="text" placeholder="Enter a City">
                     <button class="btn btn-primary" type="submit"><span class="oi oi-magnifying-glass"></span></button>
                 </form>
             </div> <!--City Search-->
         
             <div class="col-8"> <!--City Weather Container-->
-                <div class="col-12"> <!--City info container-->
-
-                </div> <!--City info container-->
-                <div class="col-12"> <!-- 5 day forecast container-->
-
+                <div class="col-12 card"> <!--City and Today info container-->
+                    <div class="card-body">
+                        <h2 class="card-title" id="city"> City:</h2>
+                        <p class="card-text" id="todays-temperature">Temperature:</p>
+                        <p class="card-text" id="humidity">Humidity:</p>
+                        <p class="card-text" id="wind-speed">Wind Speed:</p>
+                        <p class="card-text" id="uv-index"> UV Index:</p>
+                    </div> 
+                </div> <!--City and Today container-->
+                <div class="col-12" id="forecastheader"> <!-- 5 day forecast container-->
+                    <h2>5-Day Forecast:</h2>
+                    <div class="row" id="cards-container"></div>
                 </div> <!--5 day forecast container-->
             </div> <!-- City Weather Container-->
 
         </div> <!-- main div with class row-->
     </main>
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="./assets/js/script.js"></script>
 </body>
 </html>
