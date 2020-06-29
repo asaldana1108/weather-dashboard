@@ -146,4 +146,3 @@ var get5dayForecast = function(city) {
 // })
 
 cityformEl.addEventListener("submit", formSubmitHandler);
-citybuttonEl.addEventListener("click", buttonClickHandler);
