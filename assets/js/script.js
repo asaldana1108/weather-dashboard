@@ -35,7 +35,7 @@ var formSubmitHandler = function(event) {
 };
 
 var getCurrentWeather = function(city) {
-    var apiURL = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&appid=628c529cd5b47376e9d91b17583d2db0";
+    var apiURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&appid=628c529cd5b47376e9d91b17583d2db0";
 
     fetch(apiURL)
     .then(function(response) {
@@ -53,7 +53,7 @@ var displayWeather = function(data) {
     console.log(data);
     var cityName = data.name; 
     var date = moment().format("MM/DD/YYYY");
-    var iconURL = "http://openweathermap.org/img/wn/" + data.weather[0].icon + "@2x.png";
+    var iconURL = "https://openweathermap.org/img/wn/" + data.weather[0].icon + "@2x.png";
     var iconEl = document.createElement("img");
     iconEl.setAttribute("src", iconURL);
 
@@ -72,7 +72,7 @@ var displayWeather = function(data) {
     var cityLon = data.coord.lon;
     var cityLat = data.coord.lat; 
 
-    var uvIndexURL = "http://api.openweathermap.org/data/2.5/uvi?appid=628c529cd5b47376e9d91b17583d2db0&lat=" + cityLat +"&lon=" + cityLon;
+    var uvIndexURL = "https://api.openweathermap.org/data/2.5/uvi?appid=628c529cd5b47376e9d91b17583d2db0&lat=" + cityLat +"&lon=" + cityLon;
     fetch(uvIndexURL)
         .then((response) => {
         return response.json();
@@ -96,7 +96,7 @@ var displayWeather = function(data) {
 };
 
 var get5dayForecast = function(city) {
-    var api5dayURL = "http://api.openweathermap.org/data/2.5/forecast?q=" + city + "&units=imperial&appid=628c529cd5b47376e9d91b17583d2db0";
+    var api5dayURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&units=imperial&appid=628c529cd5b47376e9d91b17583d2db0";
 
     fetch(api5dayURL)
     .then(function(response) {
@@ -106,7 +106,7 @@ var get5dayForecast = function(city) {
                     if(data.list[i].dt_txt.indexOf("12:00:00") !== -1) {
                         var temp = data.list[i].main.temp;
                         var humd = data.list[i].main.humidity;
-                        var imglink = "http://openweathermap.org/img/wn/" + data.list[i].weather[0].icon + "@2x.png";
+                        var imglink = "https://openweathermap.org/img/wn/" + data.list[i].weather[0].icon + "@2x.png";
 
                         var cardGroup = document.createElement("div");
                         cardGroup.className = "card-group";
