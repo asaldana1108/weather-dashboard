@@ -138,6 +138,12 @@ var get5dayForecast = function(city) {
     })
 };
 
-
+// $("#citybutton").on("click", "button", function () {
+//     var clickedcity = $(this).text().trim();
+//     console.log(clickedcity);
+//     citynameEl = clickedcity;
+//     formSubmitHandler();
+// })
 
 cityformEl.addEventListener("submit", formSubmitHandler);
+citybuttonEl.addEventListener("click", buttonClickHandler);
